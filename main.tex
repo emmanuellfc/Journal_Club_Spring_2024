@@ -51,35 +51,47 @@
         \end{itemize}
         \item Examples
         \begin{itemize}
-            \item Bicapas de fosfolipidos
-            \item Capsides virales
-            \item Giroides de copolimeros en bloque
+            \item Phospholipid bilayers
+            \item Viral apsids
+            \item Block copolymer gyroids
             \item Micro shells of Nanpoarticles (NPs)
+        \end{itemize}
+        \item Applications
+        \begin{itemize}
+            \item Drug delivery
+            \item Photonic crystals 
+            \item Biological systems.
         \end{itemize}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Applications of self-assembly}
-    \begin{itemize}
-        \item Drug delivery
-        \item Photonic crystals
-        \item Biological systems.
-    \end{itemize}
-\end{frame}
-
 \begin{frame}{Self-assembly of NP in a LC}
-    \begin{itemize}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{itemize}
         \item Fluorescent NP
         \begin{itemize}
             \item Functionalized with mesogens.
-            \item Solubles en 5CB
-            \item Insolubles en 5CB
+            \item Soluble in 5CB
+            \item Insoluble in 5CB
         \end{itemize}
         \item Micro shell formation
         \begin{itemize}
             \item Stable structures.
         \end{itemize}
     \end{itemize}
+        
+        \end{column}
+
+        \begin{column}{0.6\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[scale = 0.28]{Figures/Linda_Experiment.png}
+                \caption{A. L. Rodarte, et al. Soft  Matter (2015)}
+                \label{fig:enter-label}
+            \end{figure}
+        \end{column}
+        \end{columns}
 \end{frame}
 
 \begin{frame}{Continuum Models}
@@ -106,37 +118,69 @@
 \subsection{Rigid chains of LJ: Molecular Dynamics.}
 
 \begin{frame}{Model and Statistical Ensemble}
-    \begin{itemize}
-        \item LC: rigid chain of 9 Lenard-Jones(LJ) spheres.
-        \item NPs: spheres of LJ, bigger than LC chains.
-        \item NPT ensemble.
-        \item Gradual elevation of the pressure and temperature to generate initial states.
-    \end{itemize}
+   \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item LC: rigid chain of 9 Lenard-Jones(LJ) spheres.
+            \item NPs: spheres of LJ, bigger than LC chains.
+            \item NPT ensemble.
+            \item Gradual elevation of the pressure and temperature to generate initial states.
+        \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[scale = 0.20]{Figures/Model.png}
+                \caption{{\scriptsize a. Representative screenshot of the systems, b. Oyarzún et al. Molecular Physics (2016).}}
+                \label{fig:enter-label}
+            \end{figure}
+        \end{column}
+        \end{columns}
+    
 \end{frame}
 
 \begin{frame}{HOOMD-blue}
 HOOMD-blue is a general-purpose particle simulation toolkit, implementing molecular dynamics and hard particle Monte Carlo optimized for fast execution on both GPUs and CPUs.
-    \begin{itemize}
-        \item Python package.
-        \item Active development.
-        \item Easy instalation.
-    \end{itemize}
+        \begin{itemize}
+            \item Python package.
+            \item Active development.
+            \item Easy instalation.
+        \end{itemize}
+        \begin{figure}
+            \centering
+            \includegraphics[scale = 0.15]{Figures/hoomd.png}
+            %\caption{Caption}
+            \label{fig:Hoomd Logo}
+        \end{figure}
 \end{frame}
 
 \begin{frame}{Methodology}
-    
-    \begin{table}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item Isobars studied: $P \in \{1.3, 1.5, 1.8, 2.3\}$
+            \item Sigmas studied: $\sigma \in \{0, 2, 4, 5\}$
+            \item Explicitly:
+                \begin{itemize}
+                    \item $\sigma = 0$ $\implies P_{\sigma_0} \in \{1.3, 1.5, 1.8, 2.3\}$
+                    \item $\sigma = 2$ $\implies P_{\sigma_2} \in \{1.3, 1.5, 1.8, 2.3\}$
+                    \item $\sigma = 4$ $\implies P_{\sigma_4} \in \{1.3, 1.5, 1.8, 2.3\}$
+                    \item $\sigma = 5$ $\implies P_{\sigma_5} \in \{1.3, 1.5, 1.8, 2.3\}$
+                \end{itemize}
+        \end{itemize}
+        
+        \end{column}
+
+        \begin{column}{0.6\textwidth}
+            \begin{figure}
         \centering
-        \begin{tabular}{cc}
-            $P$ & $T$\\
-             1.3 & [5.6, 6.6] \\
-             1.5 & [6.0, 7.0] \\
-             1.8 & [6.6, 7.6] \\
-             2.3 & [7.0, 8.0] \\
-        \end{tabular}
-        \caption{Studied Systems.}
-        \label{tab:my_label}
-    \end{table}
+        \includegraphics[scale=0.22
+]{Figures/Simulated_Systems.png}
+        \caption{{\scriptsize Points for simulation.}}
+        \label{fig:enter-label}
+    \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 
@@ -144,36 +188,111 @@ HOOMD-blue is a general-purpose particle simulation toolkit, implementing molecu
 \subsection{I-N transition, coupling constant, entropy changes and latent heat.}
 
 \begin{frame}{Isotropic-Nematic transition}
-    Using this approach we can obtain:
-    \begin{figure}[]
+    \begin{itemize}
+        \item The order parameter S decreases rapidly with increasing temperature above TIN
+        \item Non linear Fit.
+    \end{itemize}
+    \begin{figure}
         \centering
-        \includegraphics[scale = 0.13]{Figures/SvT_Sigma0_1X.png}
+        \includegraphics[scale = 0.25]{Figures/Transition.png}
         \caption{Order parameter as a function of temperature.}
         \label{fig:enter-label}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Dependency with the pressure}
-    
-\end{frame}
-
 \begin{frame}{Determination of $g$}
-    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        From Landau-de Gennes theory, we know that 
+        $$g = -R\frac{aT_{c_0}}{\eta}$$
+        So, using our results for R and η, along with the numericla values 
+        $$a = 190 kPa/K (*),$$
+        $$T_{c_0} = 313.8 (**),K$$
+        it is possible to calculate the coupling constant for 8CB
+        $$g = 53MPa$$
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[scale = 0.30]{Figures/G_Det1.png}
+            \caption{{\scriptsize Transition temperature as a function of the packing factor for isobars 1.3 (red), 1.5 (green), 1.8 (blue) and 2.3 (black).}}
+            \label{fig:enter-label}
+        \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Dependence with the pressure}
-    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item The coupling “constant” depends on the pressure:  $g = g(P)$
+            \item The I-N transition temperature decreases with increasing NPs concentration.
+            \item The I-N transition temperature also depends on pressure, at fixed $\eta $.
+        \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[scale = 0.20]{Figures/P_Dep.png}
+            \caption{{\scriptsize a. Nematic isotropic transition temperature for different diameters of NPs., b. Volume fraction for different diameters of NPs.}}
+            \label{fig:enter-label}
+        \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Latent heat per particle}
-    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item The latent heat per particle associated with the I-N transition increases linearly with pressure for the pure system and each of the other systems.
+        \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[scale = 0.20]{Figures/L_Heat.png}
+            \caption{{\scriptsize a. Values of latent heat per particle associated with the I-N transition, b. Graph of the latent heat per particle associated with the I-N transition for the pure system (red), (green), (blue) and black.}}
+            \label{fig:enter-label}
+        \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Entropy of I-N transition}
-    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item The entropy change per particle associated with the I-N transition is independent of pressure, but is proportional to volume.
+        \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[scale = 0.22]{Figures/Entropy.png}
+            \caption{{\scriptsize a. Values of the change in entropy per particle associated with the transition, b. Change in entropy per particle associated with the transition.}}
+            \label{fig:enter-label}
+        \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \section{Conclusions}
+\begin{frame}{Conclusions}
+    \begin{itemize}
+        \item With this methodology it is possible to find the coupling parameter between NPs and mesogens, calculate the latent heat of transition and the entropy associated with this change (because HOOMD can be used on GPUs it makes the method efficient).
+
+        \item The coupling parameter is strongly related to pressure.
+
+        \item The observed linear dependence of $\eta$ on the transition temperature indicates that the single-particle theoretical description might be suitable for interpreting the associated free energy coupling term via the chemical potential.
+
+        \item The dependence of $g$ on $P$ can lead to the formation of spatially periodic NP structures upon standing acoustic waves or passing shock waves.
+    \end{itemize}
+\end{frame}
 
 % \subsection{Physics and PDE}
 % \begin{frame}{Physics and PDE}
@@ -601,13 +720,17 @@ HOOMD-blue is a general-purpose particle simulation toolkit, implementing molecu
 
 \beamertemplatebookbibitems
 \begin{thebibliography}{}
-\bibitem{NetworkX}HAGBERC, ARIC, SCHULT, DAN, S. \newblock \textquotedbl NetworkX.\textquotedbl{} \newblock Software Package.
+% \bibitem{NetworkX}HAGBERC, ARIC, SCHULT, DAN, S. \newblock \textquotedbl NetworkX.\textquotedbl{} \newblock Software Package.
 
-\bibitem{-}Harris, Charles R., et al. \newblock \textquotedbl Array programming with NumPy.\textquotedbl{} \newblock Nature 585.7825 (2020): 357-362.
+% \bibitem{-}Harris, Charles R., et al. \newblock \textquotedbl Array programming with NumPy.\textquotedbl{} \newblock Nature 585.7825 (2020): 357-362.
 
-\bibitem{--}Landau, Rubin H., Manuel J. Páez, and Cristian C. Bordeianu. \newblock \textquotedbl Computational physics: Problem solving with Python\textquotedbl{} \newblock John Wiley & Sons, 2015.
+% \bibitem{--}Landau, Rubin H., Manuel J. Páez, and Cristian C. Bordeianu. \newblock \textquotedbl Computational physics: Problem solving with Python\textquotedbl{} \newblock John Wiley & Sons, 2015.
 
-\bibitem{---}LSchlömer, N. \newblock \textquotedbl "pygalmesh: Python interface for CGAL’s meshing tools.\textquotedbl{} \newblock DOI: https://doi. org/10.5281/zenodo 5564818 (2021).
+% \bibitem{---}LSchlömer, N. \newblock \textquotedbl "pygalmesh: Python interface for CGAL’s meshing tools.\textquotedbl{} \newblock DOI: https://doi. org/10.5281/zenodo 5564818 (2021).
+\bibitem{---} (*1)Faetti S and Palleschi V. 1984 The Journal of Chemical Physics 81 6254–6258.
+\bibitem{---} (*2)de Mesquita O N 1998 Brazilian Journal of Physics 28 00–00.
+\bibitem{---} (**)Palermo M F, Pizzirusso A, Muccioli L and Zannoni C 2013 The Journal of Chemical Physics 138 204901
+
 
 \end{thebibliography}
 \end{frame}
